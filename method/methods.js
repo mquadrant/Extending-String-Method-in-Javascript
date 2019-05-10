@@ -26,4 +26,8 @@ String.prototype.isQuestion = function (){
     return /\?$/.test(this);
 }
 
+String.prototype.words = function (){
+    return this.match(/\w+/g);
+}
+
 module.exports = String.prototype;
