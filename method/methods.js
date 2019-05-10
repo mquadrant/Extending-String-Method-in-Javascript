@@ -30,4 +30,7 @@ String.prototype.words = function (){
     return this.match(/\w+/g);
 }
 
+String.prototype.wordCount = function (){
+    return this.words().length;
+}
 module.exports = String.prototype;
