@@ -81,3 +81,15 @@ describe("Test for numberWords() method in String Prototype", () => {
         expect(result).toEqual('three two five');
     });
 });
+
+describe("Test for isDigit() method in String Prototype", () => {
+    it("should return true if the string is a digit(one number)", () => {
+        var result = new Number(3).isDigit();
+        expect(result).toBeTruthy();
+    });
+
+    it("should return false if the string is two or more digits", () => {
+        var result = new Number(32).isDigit();
+        expect(result).toBeFalsy();
+    });
+});
