@@ -60,3 +60,17 @@ describe("Test for fromCurrency() method in String Prototype", () => {
         expect(result).toBeCloseTo(11111.11);
     });
 });
+
+describe("Test for inverseCase() method in String Prototype", () => {
+    it("should return each letter in the string as an inverse of its current case", () => {
+        var result = "Mr. Ben".inverseCase();
+        expect(result).toEqual('mR. bEN');
+    });
+});
+
+describe("Test for alternatingCase() method in String Prototype", () => {
+    it("should return the letters in alternating cases. It must start with a lower case", () => {
+        var result = "Onomatopoeia".alternatingCase();
+        expect(result).toEqual('oNoMaToPoEiA');
+    });
+});
