@@ -53,3 +53,10 @@ describe("Test for toCurrency() method in String Prototype", () => {
         expect(result).toEqual('11,111.11');
     });
 });
+
+describe("Test for fromCurrency() method in String Prototype", () => {
+    it("should return a number representation of the Currency String", () => {
+        var result = "11,111.11".fromCurrency();
+        expect(result).toBeCloseTo(11111.11);
+    });
+});
