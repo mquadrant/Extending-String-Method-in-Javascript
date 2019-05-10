@@ -10,4 +10,11 @@ String.prototype.toUpper = function(){
     });
 }
 
+//toLower return the string in lower case
+String.prototype.toLower = function(){
+    return this.replace(/[A-Z]/g,function(str){
+        return String.fromCharCode(str.charCodeAt(0) + 32);
+    })
+}
+
 module.exports = String.prototype;
