@@ -22,4 +22,8 @@ String.prototype.ucFirst = function () {
     return this.replace(/[A-Za-z]/, (str) => str.toUpper());
 }
 
+String.prototype.isQuestion = function (){
+    return /\?$/.test(this);
+}
+
 module.exports = String.prototype;
