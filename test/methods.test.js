@@ -1,3 +1,5 @@
+require('../method/methods')
+
 describe("Test for hasVowel() method in the String Prototype", () => {
     it("should return 'true' if the string contains vowels", () => {
         var result = "Going home".hasVowel();
