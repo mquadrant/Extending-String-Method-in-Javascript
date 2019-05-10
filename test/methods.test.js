@@ -11,3 +11,10 @@ describe("Test for toUpper method in String Prototype Returns the String", () =>
         expect(result).toMatch("GOING 3467 HOME");
     });
 });
+
+describe("Test for toUpper method in String Prototype Returns the String", () => {
+    it("should returns the passed-in string with all characters in upper cases", () => {
+        var result = "Going 3467 home".toUpper();
+        expect(result).toMatch("GOING 3467 HOME");
+    });
+});
