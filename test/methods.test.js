@@ -25,3 +25,10 @@ describe("Test for ucFirst() method in String Prototype", () => {
         expect(result).toMatch("House is good");
     });
 });
+
+describe("Test for isQuestion() method in String Prototype", () => {
+    it("should returns 'true' if the string is a question (ending with a question mark).", () => {
+        var result = "Is he coming back?".isQuestion();
+        expect(result).toBeTruthy();
+    });
+});
