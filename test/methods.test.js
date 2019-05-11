@@ -50,9 +50,13 @@ describe("Test for wordCount() method in String Prototype", () => {
 });
 
 describe("Test for toCurrency() method in String Prototype", () => {
-    it("should return a currency representation of the String", () => {
+    it("should return a currency representation of a float String", () => {
         var result = "11111.11".toCurrency();
         expect(result).toEqual('11,111.11');
+    });
+    it("should return a currency representation of a number String", () => {
+        var result = "11111".toCurrency();
+        expect(result).toEqual('11,111');
     });
 });
 
