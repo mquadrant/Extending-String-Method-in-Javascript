@@ -33,4 +33,10 @@ String.prototype.words = function (){
 String.prototype.wordCount = function (){
     return this.words().length;
 }
+
+String.prototype.toCurrency = function (){
+    var separate = this.split('.');
+    separate[0] = separate[0].replace(/\B(?=(?:\d{3})+$)/g,',');
+    return separate.join('.');
+}
 module.exports = String.prototype;
