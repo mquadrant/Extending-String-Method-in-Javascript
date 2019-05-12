@@ -39,4 +39,9 @@ String.prototype.toCurrency = function (){
     separate[0] = separate[0].replace(/\B(?=(?:\d{3})+$)/g,',');
     return separate.join('.');
 }
+
+String.prototype.fromCurrency = function(){
+    return parseFloat(this.replace(/(,)(?!.*[a-zA-Z])/g,''));
+}
+
 module.exports = String.prototype;
