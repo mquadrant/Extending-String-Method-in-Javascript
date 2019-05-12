@@ -22,26 +22,31 @@ String.prototype.ucFirst = function () {
     return this.replace(/[A-Za-z]/, (str) => str.toUpper());
 }
 
-String.prototype.isQuestion = function (){
+String.prototype.isQuestion = function () {
     return /\?$/.test(this);
 }
 
-String.prototype.words = function (){
+String.prototype.words = function () {
     return this.match(/\w+/g);
 }
 
-String.prototype.wordCount = function (){
+String.prototype.wordCount = function () {
     return this.words().length;
 }
 
-String.prototype.toCurrency = function (){
+String.prototype.toCurrency = function () {
     var separate = this.split('.');
-    separate[0] = separate[0].replace(/\B(?=(?:\d{3})+$)/g,',');
+    separate[0] = separate[0].replace(/\B(?=(?:\d{3})+$)/g, ',');
     return separate.join('.');
 }
 
-String.prototype.fromCurrency = function(){
-    return parseFloat(this.replace(/(,)(?!.*[a-zA-Z])/g,''));
+String.prototype.fromCurrency = function () {
+    return parseFloat(this.replace(/(,)(?!.*[a-zA-Z])/g, ''));
+}
+
+String.prototype.inverseCase = function () {
+    return this.replace(/[A-Za-z]/g, function(str){
+        return str>'Z'?str.toUpper():str.toLower()});
 }
 
 module.exports = String.prototype;
