@@ -77,4 +77,8 @@ Number.prototype.numberWords = function () {
     });
 }
 
+Number.prototype.isDigit = function () {
+    return /^\d$/.test(this);
+}
+
 module.exports = String.prototype;
