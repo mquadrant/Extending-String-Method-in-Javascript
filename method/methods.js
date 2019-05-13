@@ -50,9 +50,13 @@ String.prototype.inverseCase = function () {
 }
 
 String.prototype.alternatingCase = function () {
-    return this.replace(/[A-Za-z](?!.*[0-9])/g,function(str,offset){
-        return offset%2 === 0?str.toLower():str.toUpper();
-    });
+    if(/[^A-Za-z]/g.test(this)){
+        return "invalid input. All must be alphabet!";
+    }else{
+        return this.replace(/[A-Za-z](?!.*[0-9])/g,function(str,offset){
+            return offset%2 === 0?str.toLower():str.toUpper();
+        });
+    }
 }
 
 module.exports = String.prototype;
