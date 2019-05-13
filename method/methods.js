@@ -19,7 +19,8 @@ String.prototype.toLower = function () {
 
 //ucFirst return the string with the first character in Upper case
 String.prototype.ucFirst = function () {
-    return this.replace(/[A-Za-z]/, (str) => str.toUpper());
+    return this.replace(/[A-Za-z]/, function (str) { 
+        return str.toUpper()});
 }
 
 String.prototype.isQuestion = function () {
