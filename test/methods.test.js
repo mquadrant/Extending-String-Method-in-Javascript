@@ -90,6 +90,10 @@ describe("Test for numberWords() method in String Prototype", () => {
         var result = new Number(325).numberWords();
         expect(result).toMatch('three two five');
     });
+    it("should return the all numbers in words.", () => {
+        var result = new Number(1234607895).numberWords();
+        expect(result).toMatch('one two three four six zero seven eight nine five');
+    });
 });
 
 describe("Test for isDigit() method in String Prototype", () => {
