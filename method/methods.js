@@ -46,7 +46,17 @@ String.prototype.fromCurrency = function () {
 
 String.prototype.inverseCase = function () {
     return this.replace(/[A-Za-z]/g, function(str){
-        return str>'Z'?str.toUpper():str.toLower()});
+        return str>='a'?str.toUpper():str.toLower()});
+}
+
+String.prototype.alternatingCase = function () {
+    if(/[^A-Za-z]/g.test(this)){
+        return "invalid input. All must be alphabet!";
+    }else{
+        return this.replace(/[A-Za-z](?!.*[0-9])/g,function(str,offset){
+            return offset%2 === 0?str.toLower():str.toUpper();
+        });
+    }
 }
 
 module.exports = String.prototype;
