@@ -88,7 +88,11 @@ describe("Test for alternatingCase() method in String Prototype", () => {
 describe("Test for numberWords() method in String Prototype", () => {
     it("should return the numbers in words.", () => {
         var result = new Number(325).numberWords();
-        expect(result).toEqual('three two five');
+        expect(result).toMatch('three two five');
+    });
+    it("should return the all numbers in words.", () => {
+        var result = new Number(1234607895).numberWords();
+        expect(result).toMatch('one two three four six zero seven eight nine five');
     });
 });
 
