@@ -79,6 +79,10 @@ describe("Test for alternatingCase() method in String Prototype", () => {
         var result = "Onomatopoeia".alternatingCase();
         expect(result).toEqual('oNoMaToPoEiA');
     });
+    it("should return an error message when the string contain characters order than alphabet", () => {
+        var result = "Onomato3poeia".alternatingCase();
+        expect(result).toEqual('invalid input. All must be alphabet!');
+    });
 });
 
 describe("Test for numberWords() method in String Prototype", () => {
