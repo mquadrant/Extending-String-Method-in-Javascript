@@ -81,7 +81,7 @@ describe("Test for alternatingCase() method in String Prototype", () => {
     });
     it("should return an error message when the string contain characters order than alphabet", () => {
         var result = "Ono-mato3poeia".alternatingCase();
-        expect(result).toEqual('invalid input. All must be alphabet!');
+        expect(result).toEqual('oNo-MaTo3PoEiA');
     });
 });
 
