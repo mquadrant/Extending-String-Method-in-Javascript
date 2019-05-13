@@ -1,6 +1,6 @@
 //hasvowel return true if the string contain a vowel
 String.prototype.hasVowel = function () {
-    return /[aeiou]/.test(this);
+    return /[aeiouAEIOU]/.test(this);
 }
 
 //toUpper return the string in capital case
