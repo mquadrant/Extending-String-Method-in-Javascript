@@ -28,15 +28,15 @@ String.prototype.isQuestion = function () {
 }
 
 String.prototype.words = function () {
-    return this.match(/\w+/g);
+    return this.match(/\b[\w-]+\b/g);
 }
 
 String.prototype.wordCount = function () {
     return this.words().length;
 }
 
-String.prototype.toCurrency = function () {
-    var separate = this.split('.');
+Number.prototype.toCurrency = function () {
+    var separate = this.toString().split('.');
     separate[0] = separate[0].replace(/\B(?=(?:\d{3})+$)/g, ',');
     return separate.join('.');
 }

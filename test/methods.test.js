@@ -30,32 +30,32 @@ describe("Test for ucFirst() method in String Prototype", () => {
 
 describe("Test for isQuestion() method in String Prototype", () => {
     it("should return 'true' if the string is a question (ending with a question mark).", () => {
-        var result = "Is he coming back?".isQuestion();
+        var result = "Is he com?ing? back?".isQuestion();
         expect(result).toBeTruthy();
     });
 });
 
 describe("Test for words() method in String Prototype", () => {
     it("should return a list of the words in the string, as an Array.", () => {
-        var result = "Javascript is a programming language.".words();
-        expect(result).toEqual(['Javascript', 'is', 'a', 'programming', 'language']);
+        var result = "Javascript is a progra-mming language.".words();
+        expect(result).toEqual(['Javascript', 'is', 'a', 'progra-mming', 'language']);
     });
 });
 
 describe("Test for wordCount() method in String Prototype", () => {
     it("should return the number of words in the string", () => {
-        var result = "Javascript is a programming language.".wordCount();
+        var result = "Javascript is a progra-mming language.".wordCount();
         expect(result).toBe(5);
     });
 });
 
 describe("Test for toCurrency() method in String Prototype", () => {
     it("should return a currency representation of a float String", () => {
-        var result = "11111.11".toCurrency();
+        var result = new Number(11111.11).toCurrency();
         expect(result).toEqual('11,111.11');
     });
     it("should return a currency representation of a number String", () => {
-        var result = "11111".toCurrency();
+        var result = new Number(11111).toCurrency();
         expect(result).toEqual('11,111');
     });
 });
@@ -80,7 +80,7 @@ describe("Test for alternatingCase() method in String Prototype", () => {
         expect(result).toEqual('oNoMaToPoEiA');
     });
     it("should return an error message when the string contain characters order than alphabet", () => {
-        var result = "Onomato3poeia".alternatingCase();
+        var result = "Ono-mato3poeia".alternatingCase();
         expect(result).toEqual('invalid input. All must be alphabet!');
     });
 });
