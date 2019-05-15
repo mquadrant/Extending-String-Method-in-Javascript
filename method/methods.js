@@ -50,8 +50,12 @@ String.prototype.wordCount = function () {
 }
 
 Number.prototype.toCurrency = function () {
+    //converting number to string and splitting it at '.'
     var separate = this.toString().split('.');
-    separate[0] = separate[0].replace(/\B(?=(?:\d{3})+$)/g, ',');
+    //create a pattern that matches set of three consecutive digit and that is bounded at the left by a word character 
+    //and also do not involve in the consumption of character
+    var regex = /\B(?=(?:\d{3})+$)/g;
+    separate[0] = separate[0].replace(regex, ',');
     return separate.join('.');
 }
 
