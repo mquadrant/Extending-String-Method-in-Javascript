@@ -40,7 +40,9 @@ String.prototype.isQuestion = function () {
 }
 
 String.prototype.words = function () {
-    return this.match(/\b[\w-]+\b/g);
+    //create a regular expression that matches all word character set with non-word character boundary 
+    var regex = /\b[\w-]+\b/g;
+    return this.match(regex);
 }
 
 String.prototype.wordCount = function () {
