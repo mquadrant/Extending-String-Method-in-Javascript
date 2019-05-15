@@ -67,7 +67,7 @@ String.prototype.fromCurrency = function () {
 
 String.prototype.inverseCase = function () {
     //create a pattern that matches both capital and small letter.
-    var regex = [A-Za-z]/g;
+    var regex = /[A-Za-z]/g;
     return this.replace(regex, function (string) {
         //change small letter to capital letter and vice-versa
         return string >= 'a' ? string.toUpper() : string.toLower()
@@ -86,20 +86,14 @@ String.prototype.alternatingCase = function () {
 }
 
 Number.prototype.numberWords = function () {
-    return (this.toString()).replace(/\d/g, function (str) {
-        switch(str.toLower()){
-            case '1': return "one ";
-            case '2': return "two ";
-            case '3': return "three ";
-            case '4': return "four ";
-            case '5': return "five ";
-            case '6': return "six ";
-            case '7': return "seven ";
-            case '8': return "eight ";
-            case '9': return "nine ";
-            case '0': return "zero ";
-        }
-    });
+    var numberWord = ['zero','one','two','three','four','five','six','seven','eight','nine'];
+    var word = [];
+    //create a pattern that matches all digits
+    var regex = /\d/g;
+    while(index = regex.exec(this)){
+        word.push(numberWord[index]);
+    }
+    return word.join(' ');
 }
 
 Number.prototype.isDigit = function () {
