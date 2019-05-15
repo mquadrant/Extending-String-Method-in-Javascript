@@ -33,7 +33,9 @@ String.prototype.ucFirst = function () {
 }
 
 String.prototype.isQuestion = function () {
-    return /\?$/.test(this);
+    //create a regular expression that matches question mark at the end of the string
+    var regex = /\?$/;
+    return regex.test(this);
 }
 
 String.prototype.words = function () {
