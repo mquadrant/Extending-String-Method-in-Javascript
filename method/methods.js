@@ -1,6 +1,8 @@
 //hasvowel return true if the string contain a vowel
 String.prototype.hasVowel = function () {
-    return /[aeiouAEIOU]/.test(this);
+    //create a regular expression that matches all vowel both capital and small letter.
+    var regex = /[aeiouAEIOU]/;
+    return regex.test(this);
 }
 
 //toUpper return the string in capital case
