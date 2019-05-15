@@ -32,6 +32,7 @@ String.prototype.ucFirst = function () {
         return string.toUpper()});
 }
 
+//isQuestion return either true or false if the string is a question
 String.prototype.isQuestion = function () {
     //create a regular expression that matches question mark at the end of the string
     var regex = /\?$/;
