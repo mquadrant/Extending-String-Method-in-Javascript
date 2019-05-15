@@ -60,7 +60,9 @@ Number.prototype.toCurrency = function () {
 }
 
 String.prototype.fromCurrency = function () {
-    return parseFloat(this.replace(/(,)(?!.*[a-zA-Z])/g, ''));
+    //create a regular expression that matches every ',' and doesnt match when there is alphabet
+    var regex = /(,)(?!.*[a-zA-Z])/g;
+    return parseFloat(this.replace(regex, ''));
 }
 
 String.prototype.inverseCase = function () {
