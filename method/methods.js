@@ -66,8 +66,11 @@ String.prototype.fromCurrency = function () {
 }
 
 String.prototype.inverseCase = function () {
-    return this.replace(/[A-Za-z]/g, function (str) {
-        return str >= 'a' ? str.toUpper() : str.toLower()
+    //create a pattern that matches both capital and small letter.
+    var regex = [A-Za-z]/g;
+    return this.replace(regex, function (string) {
+        //change small letter to capital letter and vice-versa
+        return string >= 'a' ? string.toUpper() : string.toLower()
     });
 }
 
