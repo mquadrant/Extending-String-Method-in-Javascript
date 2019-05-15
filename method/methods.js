@@ -76,9 +76,12 @@ String.prototype.inverseCase = function () {
 
 String.prototype.alternatingCase = function () {
         let count = 1;
-    return this.replace(/[A-Za-z]/g, function (str) {
+        //create a pattern that matches both capital and small letter.
+        var regex = /[A-Za-z]/g;
+    return this.replace(regex, function (string) {
                 count++;
-                return count % 2 === 0 ? str.toLower() : str.toUpper();
+                // changing every alphabet on even position to lower case and odd to uppercase
+                return count % 2 === 0 ? string.toLower() : string.toUpper();
     });
 }
 
