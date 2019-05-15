@@ -7,8 +7,11 @@ String.prototype.hasVowel = function () {
 
 //toUpper return the string in capital case
 String.prototype.toUpper = function () {
-    return this.replace(/[a-z]/g, function (str) {
-        return String.fromCharCode(str.charCodeAt(0) - 32);
+    //the replace method takes in a regex parameter that matches all small letter in the string
+    return this.replace(/[a-z]/g, function (string) {
+        //substracting 32 from the base 10 of the passed character string would produce the lower case equivalent.
+        //And then convert resulting base 10 back to character.
+        return String.fromCharCode(string.charCodeAt(0) - 32);
     });
 }
 
