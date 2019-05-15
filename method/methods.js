@@ -17,8 +17,11 @@ String.prototype.toUpper = function () {
 
 //toLower return the string in lower case
 String.prototype.toLower = function () {
-    return this.replace(/[A-Z]/g, function (str) {
-        return String.fromCharCode(str.charCodeAt(0) + 32);
+    //the replace method takes in a regex parameter that matches all capital letter in the string
+    return this.replace(/[A-Z]/g, function (string) {
+        //Adding 32 to the base 10 of the passed capital letter would produce the lower case equivalent.
+        //And then convert resulting base 10 back to character.
+        return String.fromCharCode(string.charCodeAt(0) + 32);
     });
 }
 
