@@ -97,7 +97,9 @@ Number.prototype.numberWords = function () {
 }
 
 Number.prototype.isDigit = function () {
-    return /^\d$/.test(this);
+    //create a pattern that matches only one digit i.e it must be at the start and the end also.
+    var regex = /^\d$/;
+    return regex.test(this);
 }
 
 module.exports = String.prototype;
